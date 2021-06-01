@@ -1,10 +1,21 @@
+import java.util.ArrayList;
+
 public class Werkkracht {
     private String naam;
     private Integer code;
     private Integer bsn;
     private Integer telefoonnummer;
+    ArrayList<String> personen = new ArrayList<>();
 
-    Werkkracht(){
+
+
+    Werkkracht(String naam, Integer bsn, Integer code, Integer telefoonnummer){
+        this.naam = naam;
+        this.code = code;
+        this.bsn = bsn;
+        this.telefoonnummer = telefoonnummer;
+        personen.add(naam);
+
 
     }
 
@@ -23,7 +34,10 @@ public class Werkkracht {
     public Integer getTelefoonnummer(){
         return 0;
     }
-    public boolean checknaamArray(){
+    public boolean checknaamArray(String naam){
+        if(personen.contains(naam)){
+            return true;
+        }
         return false;
     }
     public boolean checkbsn(){
